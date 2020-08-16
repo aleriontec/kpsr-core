@@ -45,13 +45,13 @@ public:
      * @param repeat Repeat task
      * @param task Task.
      */
-    void startScheduledTask(const std::string & name, int after, bool repeat, std::shared_ptr<std::function<void ()>> task) override;
-    /**
+      void startScheduledTask(const std::string & name, int after, bool repeat, std::function<void ()> task) override;
      * @brief Start Service
      * @param after Start after uS
      * @param repeat Repeat service function
      * @param service Service to execute
      */
+
     void startScheduledService(int after, bool repeat, Service * service) override;
     /**
      * @brief Stop Task
@@ -77,7 +77,7 @@ private:
          * @param repeat Repeat task
          * @param task Task
          */
-        ScheduledThread(int after, bool repeat, std::shared_ptr<std::function<void ()>> task);
+        ScheduledThread(int after, bool repeat,  std::function<void ()> task);
 
         /**
          * @brief
@@ -94,7 +94,7 @@ private:
         bool _repeat;
         bool _isRunning;
         std::thread _thread;
-        std::shared_ptr<std::function<void ()>> _task;
+        std::function<void ()> _task;
     };
 
     std::map<std::string, std::shared_ptr<ScheduledThread>> _threadMap;
