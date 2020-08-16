@@ -46,6 +46,7 @@ public:
      * @param task Task.
      */
       void startScheduledTask(const std::string & name, int after, bool repeat, std::function<void ()> task) override;
+    /**
      * @brief Start Service
      * @param after Start after uS
      * @param repeat Repeat service function
