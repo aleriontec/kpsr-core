@@ -29,7 +29,7 @@ setup(
     include_package_data=True,
     python_requires='>=3.6',
     install_requires=[
-        'setuptools',
+        'setuptools==58.5.3',
         'nose',
         'coverage',
         'lcov_cobertura',
